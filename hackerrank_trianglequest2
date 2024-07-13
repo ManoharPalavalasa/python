@@ -1,0 +1,31 @@
+import math
+n = input()
+n= int(n)
+k=0
+h=0
+t =0
+def fun1(n,i):
+    p= int(math.pow(10,i)) # i0= 2 10
+    kum = (n-i)*p
+    return kum
+    
+def myfun(n,i):
+    p= int(math.pow(10,(n-i-2)))
+    jum= (n-i-1)*p
+    return jum
+    
+for f in range(1,n+1,1):
+    k=0
+    h=0
+    t =0
+    for i in range(0,f,1):
+        num = fun1(f,i) 
+        t = k + num
+        k=t
+        num1 = myfun(f,i)
+        com = num1 + h
+        h= com
+    
+    p= int(math.pow(10,f-1))
+    fin_num = k*p + h
+    print(fin_num)
